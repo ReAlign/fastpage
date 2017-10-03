@@ -1,0 +1,35 @@
+{
+  "name": "fastpage",
+  "version": "1.0.0",
+  "description": "fast generate page",
+  "main": "index.js",
+  "bin": {
+    "fastpage": "bin/fastpage.js",
+    "fp": "bin/fastpage.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ReAlign/fastpage.git"
+  },
+  "keywords": [
+    "fast",
+    "page",
+    "nodejs",
+    "auto"
+  ],
+  "dependencies": {
+    "chalk": "^2.1.0",
+    "inquirer": "^3.3.0",
+    "moment": "^2.18.1",
+    "node.extend": "^1.0.0"
+  },
+  "author": "ReAlign",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ReAlign/fastpage/issues"
+  },
+  "homepage": "https://github.com/ReAlign/fastpage#readme"
+}
