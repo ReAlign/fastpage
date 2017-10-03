@@ -3,4 +3,5 @@ node_modules/
 dist/
 *.rar
 npm-debug.log
-components/
+webapp/src/page/
+webapp/WEB-INF/view/

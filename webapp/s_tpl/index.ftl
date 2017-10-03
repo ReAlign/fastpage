@@ -16,7 +16,7 @@
         <@nekui/>
 
     <script src="${jslib}define.js?pro=${jspro}"></script>
-    <script src="${jspro}pages/~newJsPath~/~newJsName~.js"></script>
+    <script src="${jspro}page/~newJsPath~/entry.js"></script>
         <@footer/>
     </body>
     </html>

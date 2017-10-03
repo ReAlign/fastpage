@@ -63,12 +63,10 @@ let beginFunc = function() {
                 return 'index';
             }
         }
-      ];
+    ];
 
     inquirer.prompt(questions).then(function (answers) {
-        log.ok(JSON.stringify(answers, null, '  '));
         var an = extend(fpConfig, answers);
-        log.info(JSON.stringify(an, null, '  '));
         require('./../main.js').initFunc(an);
     });
 }
@@ -90,8 +88,6 @@ let readyConfig = function() {
 
     try{
         fpConfig = require(fpConfigPath);
-        log.ok('ok');
-        log.info(fpConfig);
         beginFunc();
     } catch(e) {
         log.error('Fail reading fastpage.config.js, please check your file.');
