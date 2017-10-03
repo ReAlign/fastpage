@@ -1,6 +1,7 @@
 var config = {
-    static_source_path: 'webapp/s_tpl',
-    tpl_dir_path: 'webapp/src'
+    baseTplPath: 'webapp/s_tpl',
+    useTplPath: 'webapp/WEB-INF/view',
+    useJsPath: 'webapp/src/components'
 };
 
 module.exports = config;

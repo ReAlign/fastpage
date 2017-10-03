@@ -3,3 +3,4 @@ node_modules/
 dist/
 *.rar
 npm-debug.log
+components/

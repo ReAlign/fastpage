@@ -7,13 +7,33 @@ let chalk = require('chalk');
 let extend = require('node.extend');
 let log = require('./../lib/util/log');
 
+let Cli = require('../lib/cli');
+let cli = new Cli();
+
+let printVersion = function() {
+    const pack = require('../package.json');
+    console.log(`v${pack.version}`);
+};
+
+let printHelp = function() {
+    console.log(
+    `\n\n\tUsage: ` + chalk.green(`fp/fastpage`) + chalk.red(` [options]\n\n`) +
+    chalk.bold.green(`\t\tfp/fastpage\t\t`) + chalk.yellow(`execute main task\n\n`) +
+    `\toptions:\n\n` +
+    chalk.bold.green(`\t\t-v/--version\t\t`) + chalk.yellow(`print version\n`) +
+    chalk.bold.green(`\t\t-h/--help\t\t`) + chalk.yellow(`print help\n\n`));
+};
+
+cli.on(['-v', '--version'], printVersion);
+cli.on(['-h', '--help'], printHelp);
+
 var fpConfig = {};
 
 let beginFunc = function() {
     var questions = [
         {
             type: 'input',
-            name: 'head_title',
+            name: 'headTitle',
             message: 'input new page head title',
             default: function () {
                 return '新页面';
@@ -21,7 +41,7 @@ let beginFunc = function() {
         },
         {
             type: 'input',
-            name: 'header_title',
+            name: 'headerTitle',
             message: 'input new page page header title',
             default: function () {
                 return '新页面';
@@ -29,7 +49,7 @@ let beginFunc = function() {
         },
         {
             type: 'input',
-            name: 'full_path',
+            name: 'folderPath',
             message: 'input new page folder path',
             default: function () {
                 return 'index';
@@ -88,4 +108,8 @@ function isFileExist(path) {
     }
 }
 
-readyConfig();
+cli.normal = function(){
+    readyConfig();
+};
+
+cli.parse(process.argv.slice(2));

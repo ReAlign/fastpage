@@ -4,46 +4,55 @@ let fs = require('fs');
 let log = require('./lib/util/log');
 
 let main = function (obj) {
-    let base_path = global.fp.root + '/' + obj.static_source_path + '/';
-    let tpl_dir_path = global.fp.root + '/' + obj.tpl_dir_path + '/';
-    let head_title = obj.head_title;
-    let header_title = obj.header_title;
-    let name = obj.name;
-    let path = obj.full_path.split('/');
-    let writes = [`${name}.ftl`];
-    let reads = [`${base_path}ftl.ftl`];
+    var mo = {
+        baseTplPath: global.fp.root + '/' + obj.baseTplPath + '/',
+        useTplPath: global.fp.root + '/' + obj.useTplPath + '/',
+        headTitle: obj.headTitle,
+        headerTitle: obj.headerTitle,
+        name: obj.name,
+        folderPath: obj.folderPath.split('/')
+    };
+
+    mo.readList = [`${mo.baseTplPath}ftl.ftl`];
+    mo.writeList = [`${mo.name}.ftl`];
+
     let file = [];
 
     let exists = function () {
         return new Promise((res, rej) => {
             (async function () {
-                for (let a of path) {
-                    fs.existsSync(base_path + a) ? base_path = `${base_path}${a}/` : await mkdir(a);
+                for (let layer of mo.folderPath) {
+                    fs.existsSync(mo.baseTplPath + layer) ? mo.baseTplPath = `${mo.baseTplPath}${layer}/` : await mkdir(layer);
                 }
-                res(base_path);
+                res(mo.baseTplPath);
             })()
         })
     }
 
-    let mkdir = function (a) {
+    let mkdir = function (layer) {
         return new Promise((res, rej) => {
-            fs.mkdir(tpl_dir_path + a, (err) => {
-                if (err) rej(err);
-                tpl_dir_path = `${tpl_dir_path}${a}/`
-                res(tpl_dir_path);
+            fs.mkdir(mo.useTplPath + layer, (err) => {
+                if (err) {
+                    log.error(err);
+                    rej(err);
+                };
+                mo.useTplPath = `${mo.useTplPath}${layer}/`
+                res(mo.useTplPath);
             });
         })
     }
 
     let readFile = function () {
         return new Promise((res) => {
-            for (let a of reads) {
-                let text = fs.readFileSync(a).toString();
-                text = text.replace(/time/g, moment().format('YYYY/MM/DD'))
-                    .replace(/~head_title~/g, head_title)
-                    .replace(/~header_title~/g, header_title)
-                    .replace(/~newJsPath~/g, path)
-                    .replace(/~newJsName~/g, name)
+            for (let layer of mo.readList) {
+                let text = fs.readFileSync(layer).toString();
+                text = text.replace(/~date~/g, moment().format('YYYY/MM/DD HH:MM:SS'))
+                    .replace(/~author~/g, '')
+                    .replace(/~headTitle~/g, mo.headTitle)
+                    .replace(/~headerTitle~/g, mo.headerTitle)
+                    .replace(/~newJsPath~/g, mo.folderPath)
+                    .replace(/~newJsName~/g, mo.name);
+
                 file.push(text)
             }
             res(file);
@@ -53,9 +62,9 @@ let main = function (obj) {
     let writeFile = function (file) {
         return new Promise((res, rej) => {
             (async function () {
-                for (let a of writes) {
-                    await fs.writeFile(`${tpl_dir_path}${a}`,
-                        a == writes[3] ? file[0] : a == writes[0] ? file[1] : '', (err) => {
+                for (let layer of mo.writeList) {
+                    await fs.writeFile(`${mo.useTplPath}${layer}`,
+                        layer == mo.writeList[3] ? file[0] : layer == mo.writeList[0] ? file[1] : '', (err) => {
                             if (err) rej(err)
                         })
                 }
@@ -69,7 +78,7 @@ let main = function (obj) {
             await exists();
             await readFile();
             await writeFile(await readFile());
-            return log.ok(`successfully created ${name} component`)
+            return log.ok(`successfully created ${mo.name} component`)
         } catch (err) {
             log.error(err);
         }
