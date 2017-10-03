@@ -4,8 +4,8 @@ let fs = require('fs');
 let log = require('./lib/util/log');
 
 let main = function (obj) {
-    let base_path = __dirname + '/' + obj.static_source_path + '/';
-    let tpl_dir_path = __dirname + '/' + obj.tpl_dir_path + '/';
+    let base_path = global.fp.root + '/' + obj.static_source_path + '/';
+    let tpl_dir_path = global.fp.root + '/' + obj.tpl_dir_path + '/';
     let head_title = obj.head_title;
     let header_title = obj.header_title;
     let name = obj.name;
