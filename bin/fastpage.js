@@ -54,7 +54,14 @@ let beginFunc = function() {
 }
 
 let readyConfig = function() {
-    let fpConfigPath = path.join(__dirname, '../fastpage.config.js');
+    let root = path.join(process.cwd());
+    
+    global.fp = {
+        root: root,
+        dev: {},
+    }
+    
+    let fpConfigPath = path.join(__dirname, 'fastpage.config.js');
 
     if( !isFileExist(fpConfigPath) ) {
         log.error('Can\'t find fastpage.config.js, please make sure the file exists.');
