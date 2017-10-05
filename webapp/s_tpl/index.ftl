@@ -8,6 +8,7 @@
     <head>
         <title>~headTitle~</title>
         <@nekcss/>
+        <link rel="stylesheet" href="${csRoot}page/~newTopPath~/main.css"/>
     </head>
     <body>
         <@menus/>

@@ -1,5 +1,6 @@
 var config = {
     baseTplPath: '',
+    userMcssPath: '',
     useTplPath: '',
     useJsPath: ''
 };
