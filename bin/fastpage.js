@@ -6,15 +6,14 @@ let fs = require('fs');
 let path = require('path');
 let inquirer = require('inquirer');
 let chalk = require('chalk');
-let extend = require('node.extend');
 let log = require('./../lib/util/log');
 
-let Cli = require('../lib/cli');
+let Cli = require('./../lib/cli');
 let cli = new Cli();
 
-let showVersion = function () {
+let getVersion = function () {
     let pack = require('../package.json');
-    log.show(`v ${pack.version}`, 'fp');
+    log.show(`v ${pack.version}`);
 };
 
 let initFpConfigFile = function () {
@@ -32,7 +31,7 @@ let printHelp = function () {
     );
 };
 
-cli.on(['-v', '--version'], showVersion);
+cli.on(['-v', '--version'], getVersion);
 cli.on(['-i', '--init'], initFpConfigFile);
 cli.on(['-h', '--help'], printHelp);
 
@@ -40,47 +39,6 @@ var fpConfig = {};
 
 global.fp = {
     root: path.join(process.cwd())
-}
-
-let beginFunc = function () {
-    var questions = [{
-            type: 'input',
-            name: 'headTitle',
-            message: 'input new page head title',
-            default: function () {
-                return '新页面';
-            }
-        },
-        {
-            type: 'input',
-            name: 'headerTitle',
-            message: 'input new page page header title',
-            default: function () {
-                return '新页面';
-            }
-        },
-        {
-            type: 'input',
-            name: 'folderPath',
-            message: 'input new page folder path',
-            default: function () {
-                return 'index';
-            }
-        },
-        {
-            type: 'input',
-            name: 'name',
-            message: 'input new page name',
-            default: function () {
-                return 'index';
-            }
-        }
-    ];
-
-    inquirer.prompt(questions).then(function (answers) {
-        var an = extend(fpConfig, answers);
-        require('./../main.js').initFunc(an);
-    });
 }
 
 let isFileExist = function (path) {
@@ -101,7 +59,7 @@ let readyConfig = function () {
 
     try {
         fpConfig = require(fpConfigPath);
-        beginFunc();
+        require('./../lib/inquirer.entry').run(fpConfig);
     } catch (e) {
         log.error('Fail reading fastpage.config.js, please check your file.');
         return false;

@@ -1,6 +1,5 @@
-<#--  pageName: ~headTitle~  -->
 <#--  author: ~author~  -->
-<#--  date: ~date~  -->
+<#--  date:   ~date~  -->
 <@compress>
     <#escape x as x?html>
         <#include "/common/macro.ftl">
