@@ -26,9 +26,9 @@ let printHelp = function () {
         `\n\n\tUsage: ` + chalk.green(`fp/fastpage`) + chalk.red(` [options]\n\n`) +
         chalk.bold.green(`\t\tfp/fastpage\t\t`) + chalk.yellow(`execute main task\n\n`) +
         `\toptions:\n\n` +
-        chalk.bold.green(`\t\t-v/--version\t\t`) + chalk.yellow(`version\n`) +
-        chalk.bold.green(`\t\t-i/--init\t\t`) + chalk.yellow(`init fastpage config file\n`) +
-        chalk.bold.green(`\t\t-h/--help\t\t`) + chalk.yellow(`help\n\n`)
+        chalk.bold.green(`\t\t-v/--version\t\t`) + chalk.yellow(`print version\n`) +
+        chalk.bold.green(`\t\t-i/--init\t\t`) + chalk.yellow(`create fastpage.config.js\n`) +
+        chalk.bold.green(`\t\t-h/--help\t\t`) + chalk.yellow(`print help\n\n`)
     );
 };
 
