@@ -1,5 +1,7 @@
 #!/usr/bin/env node
 
+'use strict';
+
 let fs = require('fs');
 let path = require('path');
 let inquirer = require('inquirer');
@@ -10,28 +12,38 @@ let log = require('./../lib/util/log');
 let Cli = require('../lib/cli');
 let cli = new Cli();
 
-let printVersion = function() {
-    const pack = require('../package.json');
-    console.log(`v${pack.version}`);
+let showVersion = function () {
+    let pack = require('../package.json');
+    log.show(`v ${pack.version}`, 'fp');
 };
 
-let printHelp = function() {
-    console.log(
-    `\n\n\tUsage: ` + chalk.green(`fp/fastpage`) + chalk.red(` [options]\n\n`) +
-    chalk.bold.green(`\t\tfp/fastpage\t\t`) + chalk.yellow(`execute main task\n\n`) +
-    `\toptions:\n\n` +
-    chalk.bold.green(`\t\t-v/--version\t\t`) + chalk.yellow(`print version\n`) +
-    chalk.bold.green(`\t\t-h/--help\t\t`) + chalk.yellow(`print help\n\n`));
+let initFpConfigFile = function () {
+    require('./../lib/init').run();
 };
 
-cli.on(['-v', '--version'], printVersion);
+let printHelp = function () {
+    log.show(
+        `\n\n\tUsage: ` + chalk.green(`fp/fastpage`) + chalk.red(` [options]\n\n`) +
+        chalk.bold.green(`\t\tfp/fastpage\t\t`) + chalk.yellow(`execute main task\n\n`) +
+        `\toptions:\n\n` +
+        chalk.bold.green(`\t\t-v/--version\t\t`) + chalk.yellow(`version\n`) +
+        chalk.bold.green(`\t\t-i/--init\t\t`) + chalk.yellow(`init fastpage config file\n`) +
+        chalk.bold.green(`\t\t-h/--help\t\t`) + chalk.yellow(`help\n\n`)
+    );
+};
+
+cli.on(['-v', '--version'], showVersion);
+cli.on(['-i', '--init'], initFpConfigFile);
 cli.on(['-h', '--help'], printHelp);
 
 var fpConfig = {};
 
-let beginFunc = function() {
-    var questions = [
-        {
+global.fp = {
+    root: path.join(process.cwd())
+}
+
+let beginFunc = function () {
+    var questions = [{
             type: 'input',
             name: 'headTitle',
             message: 'input new page head title',
@@ -71,40 +83,33 @@ let beginFunc = function() {
     });
 }
 
-let readyConfig = function() {
-    let root = path.join(process.cwd());
-
-    global.fp = {
-        root: root,
-        dev: {},
+let isFileExist = function (path) {
+    try {
+        return fs.existsSync(path);
+    } catch (e) {
+        return false;
     }
+};
 
+let readyConfig = function () {
     let fpConfigPath = path.join(global.fp.root, 'fastpage.config.js');
 
-    if( !isFileExist(fpConfigPath) ) {
+    if (!isFileExist(fpConfigPath)) {
         log.error('Can\'t find fastpage.config.js, please make sure the file exists.');
         return false;
     }
 
-    try{
+    try {
         fpConfig = require(fpConfigPath);
         beginFunc();
-    } catch(e) {
+    } catch (e) {
         log.error('Fail reading fastpage.config.js, please check your file.');
         return false;
     }
     return true;
 }
 
-function isFileExist(path) {
-    try {
-        return fs.existsSync(path);
-    } catch (e) {
-        return false;
-    }
-}
-
-cli.normal = function(){
+cli.normal = function () {
     readyConfig();
 };
 
