@@ -1,6 +1,6 @@
 {
   "name": "fastpage",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "fast generate page",
   "main": "index.js",
   "bin": {
@@ -17,6 +17,9 @@
   "keywords": [
     "fast",
     "page",
+    "generate file",
+    "quickly",
+    "tool",
     "nodejs",
     "auto"
   ],
