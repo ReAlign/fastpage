@@ -64,9 +64,11 @@ commander
 
 if(commander.init) {
     initFpConfigFile();
+    return false;
 }
 
 if (commander.run) {
     var str = typeof commander.run === 'boolean' ? 'page' : commander.run;
     readyConfig(str);
+    return false;
 }
