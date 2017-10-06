@@ -59,7 +59,7 @@ let readyConfig = function () {
 
     try {
         fpConfig = require(fpConfigPath);
-        require('./../lib/inquirer.entry').run(fpConfig);
+        require('./../lib/inquirer.entry').init(fpConfig);
     } catch (e) {
         log.error('Fail reading fastpage.config.js, please check your file.');
         return false;
