@@ -6,18 +6,21 @@
 NEJ.define([
     'base/util',
     'pro/extend/util',
-    'pro/widget/BaseComponent',
+    'pro/widget/BaseModalComponent',
     'text!./index.html'
-], function(_ut, _, BaseComponent, tpl) {
+], function(_ut, _, BaseModalComponent, _tpl) {
 
-    var App = BaseComponent.extend({
-        template: tpl,
+    var App = BaseModalComponent.extend({
         config: function(data) {
             _.extend(data, {
 
             });
 
             this.supr(data);
+        },
+
+        ok: function() {
+            //todo
         }
     });
 

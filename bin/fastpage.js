@@ -4,36 +4,10 @@
 
 let fs = require('fs');
 let path = require('path');
-let inquirer = require('inquirer');
 let chalk = require('chalk');
+let inquirer = require('inquirer');
+let commander = require('commander');
 let log = require('./../lib/util/log');
-
-let Cli = require('./../lib/cli');
-let cli = new Cli();
-
-let getVersion = function () {
-    let pack = require('../package.json');
-    log.show(`v ${pack.version}`);
-};
-
-let initFpConfigFile = function () {
-    require('./../lib/init').run();
-};
-
-let printHelp = function () {
-    log.show(
-        `\n\n\tUsage: ` + chalk.green(`fp/fastpage`) + chalk.red(` [options]\n\n`) +
-        chalk.bold.green(`\t\tfp/fastpage\t\t`) + chalk.yellow(`execute main task\n\n`) +
-        `\toptions:\n\n` +
-        chalk.bold.green(`\t\t-v/--version\t\t`) + chalk.yellow(`print version\n`) +
-        chalk.bold.green(`\t\t-i/--init\t\t`) + chalk.yellow(`create fastpage.config.js\n`) +
-        chalk.bold.green(`\t\t-h/--help\t\t`) + chalk.yellow(`print help\n\n`)
-    );
-};
-
-cli.on(['-v', '--version'], getVersion);
-cli.on(['-i', '--init'], initFpConfigFile);
-cli.on(['-h', '--help'], printHelp);
 
 var fpConfig = {};
 
@@ -49,7 +23,7 @@ let isFileExist = function (path) {
     }
 };
 
-let readyConfig = function () {
+let readyConfig = function (str) {
     let fpConfigPath = path.join(global.fp.root, 'fastpage.config.js');
 
     if (!isFileExist(fpConfigPath)) {
@@ -59,7 +33,11 @@ let readyConfig = function () {
 
     try {
         fpConfig = require(fpConfigPath);
-        require('./../lib/inquirer.entry').init(fpConfig);
+        if(!fpConfig[str]) {
+            log.error('Can\'t find ' + str + ' list config, please make sure the config exists.');
+            return false;
+        }
+        require('./../lib/inquirer.entry').init(fpConfig[str]);
     } catch (e) {
         log.error('Fail reading fastpage.config.js, please check your file.');
         return false;
@@ -67,8 +45,28 @@ let readyConfig = function () {
     return true;
 }
 
-cli.normal = function () {
-    readyConfig();
+let getVersion = function () {
+    let pack = require('../package.json');
+    return `${pack.version}`;
 };
 
-cli.parse(process.argv.slice(2));
+let initFpConfigFile = function () {
+    require('./../lib/init').run();
+};
+
+// commander
+commander
+    .allowUnknownOption()
+    .version('0.0.1')
+    .option('-i, --init', '初始化 fastpage.config.js')
+    .option('-r, --no-run [db]', '执行生成页面命令，不带参数，默认参数为 page')
+    .parse(process.argv);
+
+if(commander.init) {
+    initFpConfigFile();
+}
+
+if (commander.run) {
+    var str = typeof commander.run === 'boolean' ? 'page' : commander.run;
+    readyConfig(str);
+}
