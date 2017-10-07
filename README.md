@@ -2,23 +2,29 @@
 
 [中文说明](https://github.com/ReAlign/fastpage/blob/master/README_zh.md)
 
-[![NPM travis][travis-image]][travis-url]
+[![NPM travis][travis-image]][github-url]
 [![NPM version][npm-image]][npm-url]
-[![download][downloads-image]][downloads-url]
+[![download][downloads-image]][github-url]
+[![licence][licence-image]][github-url]
+
+[![NPM][nodei-image]][npm-url]
+
+[github-url]: https://github.com/ReAlign/fastpage
+[npm-url]: https://www.npmjs.com/package/fastpage
+
+[travis-image]: http://img.shields.io/travis/ReAlign/fastpage.svg
+
+[npm-image]: https://img.shields.io/npm/v/fastpage.svg
+
+[downloads-image]: https://img.shields.io/npm/dt/fastpage.svg
+
+[licence-image]: https://img.shields.io/npm/l/fastpage.svg
+
+[nodei-image]: https://nodei.co/npm/fastpage.png?downloads=true&downloadRank=true&stars=true
+
 <!-- [![NPM stars][stars-image]][stars-url]
 [![NPM forks][forks-image]][forks-url]
 [![NPM issues][issues-image]][issues-url] -->
-
-[![NPM][nodei-image]][nodei-url]
-
-[travis-image]: http://img.shields.io/travis/ReAlign/fastpage.svg
-[travis-url]: https://github.com/ReAlign/fastpage
-
-[npm-image]: https://img.shields.io/npm/v/fastpage.svg
-[npm-url]: https://www.npmjs.com/package/fastpage
-
-[downloads-image]: https://img.shields.io/npm/dt/fastpage.svg
-[downloads-url]: https://github.com/ReAlign/fastpage
 
 <!-- [stars-image]: https://img.shields.io/github/stars/ReAlign/fastpage.svg
 [stars-url]: https://github.com/ReAlign/fastpage/stargazers -->
@@ -28,9 +34,6 @@
 
 <!-- [issues-image]: https://img.shields.io/github/issues/ReAlign/fastpage.svg
 [issues-url]: https://github.com/ReAlign/fastpage/issues -->
-
-[nodei-image]: https://nodei.co/npm/fastpage.png?downloads=true&downloadRank=true&stars=true
-[nodei-url]: https://www.npmjs.com/package/fastpage
 
 ## Introduction
 
