@@ -4,8 +4,6 @@
 
 let fs = require('fs');
 let path = require('path');
-let chalk = require('chalk');
-let inquirer = require('inquirer');
 let commander = require('commander');
 let log = require('./../lib/util/log');
 
@@ -13,7 +11,7 @@ var fpConfig = {};
 
 global.fp = {
     root: path.join(process.cwd())
-}
+};
 
 let isFileExist = function (path) {
     try {
@@ -43,7 +41,7 @@ let readyConfig = function (str) {
         return false;
     }
     return true;
-}
+};
 
 let getVersion = function () {
     let pack = require('../package.json');
@@ -63,15 +61,13 @@ commander
 
 if(commander.versions) {
     log.show(getVersion());
-    return false;
+    process.exit(1);
 }
 if(commander.init) {
     initFpConfigFile();
-    return false;
 }
 
 if (commander.run) {
     var str = typeof commander.run === 'boolean' ? 'page' : commander.run;
     readyConfig(str);
-    return false;
 }

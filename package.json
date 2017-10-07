@@ -2,12 +2,13 @@
   "name": "fastpage",
   "version": "1.2.3",
   "description": "A tool to quickly generate front-end pages and associated files",
-  "main": "index.js",
+  "main": ".eslintrc.js",
   "bin": {
     "fastpage": "bin/fastpage.js",
     "fp": "bin/fastpage.js"
   },
   "scripts": {
+    "precommit": "lint-staged",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -23,12 +24,30 @@
     "nodejs",
     "auto"
   ],
+  "lint-staged": {
+    "linters": {
+      "bin/*.js": [
+        "eslint --fix",
+        "git add"
+      ],
+      "lib/**/*.js": [
+        "eslint --fix",
+        "git add"
+      ]
+    }
+  },
   "dependencies": {
     "commander": "^2.11.0",
     "chalk": "^2.1.0",
     "inquirer": "^3.3.0",
     "moment": "^2.18.1",
     "node.extend": "^1.0.0"
+  },
+  "devDependencies": {
+    "eslint": "^3.19.0",
+    "babel-eslint": "^8.0.1",
+    "husky": "^0.13.4",
+    "lint-staged": "^3.6.1"
   },
   "author": "ReAlign",
   "license": "ISC",
