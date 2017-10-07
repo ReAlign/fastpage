@@ -1,5 +1,5 @@
 # fastpage
-
+[英文说明](https://github.com/ReAlign/fastpage/blob/master/README.md)
 ## 简介
 
 快速生成前端页面和相关文件的工具

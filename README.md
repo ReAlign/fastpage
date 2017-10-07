@@ -1,5 +1,5 @@
 # fastpage
-
+[中文说明](https://github.com/ReAlign/fastpage/blob/master/README_zh.md)
 ## Introduction
 
 A tool to quickly generate front-end pages and associated files
