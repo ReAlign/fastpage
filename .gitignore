@@ -3,5 +3,6 @@ node_modules/
 dist/
 *.rar
 npm-debug.log
+webapp/src/mcss/
 webapp/src/page/
 webapp/WEB-INF/view/
