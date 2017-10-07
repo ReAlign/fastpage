@@ -4,7 +4,7 @@
 
 A tool to quickly generate front-end pages and associated files
 
-# Install & run
+## Install & run
 
 ```
 $ npm install fastpage -g
@@ -18,56 +18,48 @@ $ fp -i
 ```
 #### create main page folder and associated files
 ```
-// just fp , also you can run: fp -r page
+// just fp , also you can run: fp -r page(page config list must exist)
 $ fp
 ```
 
 #### create page with config list
 ```
+// is the configuration that exists in the configuration list
 $ fp -r modal
 ```
 
-# Configuration
+## Configuration
 
 `fastpage.config.js` sample:
 
 ```javascript
 var config = {
     page: {
-        tempPath: '/webapp/s_tpl',
+        tempPath: 'template',            // all template folder path
         list: [
             {
-                key: 'tpl',
-                path: 'webapp/WEB-INF/view',
-                tempPath: ['index.ftl'],
-                name: ['index.ftl']
-            },
-            {
-                key: 'mcss',
-                path: 'webapp/src/mcss',
-                tempPath: ['main.mcss'],
-                name: ['main.mcss']
+                key: 'ftl',              // file key
+                path: 'view',
+                tempPath: ['index.ftl'], // relative to page.tempPath
+                name: ['index.ftl']      // generate file name
             },
             {
                 key: 'js',
-                path: 'webapp/src/page',
+                path: 'src/page',
                 tempPath: ['entry.js'],
                 name: ['entry.js']
-            },
-            {
-                key: 'jsCom',
-                path: 'webapp/src/page',
-                path2: 'components',
-                tempPath: ['index.js', 'index.html'],
-                name: ['index.js', 'index.html']
             }
         ],
+        // usually a level one menu has a mcss
+        // also you can create one mcss per page
         mcssTopLevel: true,
+        // fastpage built-in some replacement rules
+        // you can customize your own replacement rules
         replaceList: [
             {
-                rex: '~value~',
-                global: true,
-                str: 'replace value'
+                rex: '~value~',      // strings to be replaced (regular expressions)
+                global: true,        // global flag
+                str: 'replace value' // string to replace
             }
         ]
     },
