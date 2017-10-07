@@ -54,14 +54,17 @@ let initFpConfigFile = function () {
     require('./../lib/init').run();
 };
 
-// commander
 commander
-    .allowUnknownOption()
-    .version('0.0.1')
-    .option('-i, --init', '初始化 fastpage.config.js')
-    .option('-r, --no-run [db]', '执行生成页面命令，不带参数，默认参数为 page')
+    .version(getVersion())
+    .option('-v, --versions', 'output the version number')
+    .option('-i, --init', 'init fastpage.config.js configuration files')
+    .option('-r, --no-run [db]', 'execute command generated page, with no arguments, the default parameters for the \'page\'')
     .parse(process.argv);
 
+if(commander.versions) {
+    log.show(getVersion());
+    return false;
+}
 if(commander.init) {
     initFpConfigFile();
     return false;
