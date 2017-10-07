@@ -1,5 +1,20 @@
 # fastpage
+
 [中文说明](https://github.com/ReAlign/fastpage/blob/master/README_zh.md)
+
+[![NPM version][npm-image]][npm-url]
+[![download][downloads-image]][downloads-url]
+
+[![NPM][nodei-image]][nodei-url]
+
+
+[npm-url]: https://www.npmjs.com/package/fastpage
+[npm-image]: https://img.shields.io/npm/v/fastpage.svg
+[downloads-image]: https://img.shields.io/npm/dm/fastpage.svg
+[downloads-url]: https://www.npmjs.com/package/fastpage
+[nodei-image]: https://nodei.co/npm/fastpage.png?downloads=true&downloadRank=true&stars=true
+[nodei-url]: https://www.npmjs.com/package/fastpage
+
 ## Introduction
 
 A tool to quickly generate front-end pages and associated files
