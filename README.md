@@ -4,9 +4,9 @@
 
 [![NPM version][npm-image]][npm-url]
 [![download][downloads-image]][downloads-url]
-[![NPM stars][stars-image]][stars-url]
+<!-- [![NPM stars][stars-image]][stars-url]
 [![NPM forks][forks-image]][forks-url]
-[![NPM issues][issues-image]][issues-url]
+[![NPM issues][issues-image]][issues-url] -->
 
 [![NPM][nodei-image]][nodei-url]
 
@@ -14,17 +14,17 @@
 [npm-image]: https://img.shields.io/npm/v/fastpage.svg
 [npm-url]: https://www.npmjs.com/package/fastpage
 
-[downloads-image]: https://img.shields.io/npm/dm/fastpage.svg
-[downloads-url]: https://www.npmjs.com/package/fastpage
+[downloads-image]: https://img.shields.io/npm/dt/fastpage.svg
+[downloads-url]: https://github.com/ReAlign/fastpage
 
-[stars-image]: https://img.shields.io/github/stars/ReAlign/fastpage.svg
+<!-- [stars-image]: https://img.shields.io/github/stars/ReAlign/fastpage.svg
 [stars-url]: https://github.com/ReAlign/fastpage/stargazers
 
 [forks-image]: https://img.shields.io/github/forks/ReAlign/fastpage.svg
 [forks-url]: https://github.com/ReAlign/fastpage/network
 
 [issues-image]: https://img.shields.io/github/issues/ReAlign/fastpage.svg
-[issues-url]: https://github.com/ReAlign/fastpage/issues
+[issues-url]: https://github.com/ReAlign/fastpage/issues -->
 
 [nodei-image]: https://nodei.co/npm/fastpage.png?downloads=true&downloadRank=true&stars=true
 [nodei-url]: https://www.npmjs.com/package/fastpage
