@@ -2,6 +2,7 @@
 
 [英文说明](https://github.com/ReAlign/fastpage/blob/master/README.md)
 
+[![NPM travis][travis-image]][travis-url]
 [![NPM version][npm-image]][npm-url]
 [![download][downloads-image]][downloads-url]
 <!-- [![NPM stars][stars-image]][stars-url]
@@ -10,6 +11,8 @@
 
 [![NPM][nodei-image]][nodei-url]
 
+[travis-image]: http://img.shields.io/travis/ReAlign/fastpage.svg
+[travis-url]: https://github.com/ReAlign/fastpage
 
 [npm-image]: https://img.shields.io/npm/v/fastpage.svg
 [npm-url]: https://www.npmjs.com/package/fastpage
@@ -18,12 +21,12 @@
 [downloads-url]: https://github.com/ReAlign/fastpage
 
 <!-- [stars-image]: https://img.shields.io/github/stars/ReAlign/fastpage.svg
-[stars-url]: https://github.com/ReAlign/fastpage/stargazers
+[stars-url]: https://github.com/ReAlign/fastpage/stargazers -->
 
-[forks-image]: https://img.shields.io/github/forks/ReAlign/fastpage.svg
-[forks-url]: https://github.com/ReAlign/fastpage/network
+<!-- [forks-image]: https://img.shields.io/github/forks/ReAlign/fastpage.svg
+[forks-url]: https://github.com/ReAlign/fastpage/network -->
 
-[issues-image]: https://img.shields.io/github/issues/ReAlign/fastpage.svg
+<!-- [issues-image]: https://img.shields.io/github/issues/ReAlign/fastpage.svg
 [issues-url]: https://github.com/ReAlign/fastpage/issues -->
 
 [nodei-image]: https://nodei.co/npm/fastpage.png?downloads=true&downloadRank=true&stars=true
