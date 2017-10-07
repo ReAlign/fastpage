@@ -1,7 +1,7 @@
 {
   "name": "fastpage",
-  "version": "1.2.2",
-  "description": "fast generate page",
+  "version": "1.2.3",
+  "description": "A tool to quickly generate front-end pages and associated files",
   "main": "index.js",
   "bin": {
     "fastpage": "bin/fastpage.js",
