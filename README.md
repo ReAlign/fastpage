@@ -5,6 +5,7 @@
 [![NPM travis][travis-image]][github-url]
 [![codebeat badge][codebeat-image]][codebeat-url]
 [![NPM version][npm-image]][npm-url]
+[![node version][node-v-image]][github-url]
 [![download][downloads-image]][github-url]
 [![licence][licence-image]][github-url]
 
@@ -19,6 +20,8 @@
 [codebeat-image]: https://codebeat.co/badges/6cedbb50-1d93-4b4a-bfe6-ec316b873667
 
 [npm-image]: https://img.shields.io/npm/v/fastpage.svg
+
+[node-v-image]: https://img.shields.io/badge/node-%E2%89%A5v7.6.0-brightgreen.svg
 
 [downloads-image]: https://img.shields.io/npm/dt/fastpage.svg
 
@@ -55,6 +58,10 @@ $ npm install fastpage -g
 ```
 
 At project root directory, and run:
+
+## condition
+
+* node version：≥v7.6.0
 
 #### init config file
 ```
