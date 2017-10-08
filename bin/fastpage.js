@@ -65,6 +65,7 @@ if(commander.versions) {
 }
 if(commander.init) {
     initFpConfigFile();
+    return false;
 }
 
 if (commander.run) {

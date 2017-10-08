@@ -23,7 +23,7 @@ var config = {
             {
                 key: 'jsCom',
                 path: 'webapp/src/page',
-                path2: 'components/op',
+                path2: 'components',
                 tempPath: ['index.js', 'index.html'],
                 name: ['index.js', 'index.html']
             }
