@@ -86,19 +86,34 @@ $ fp -r modal
 ```javascript
 var config = {
     page: {
-        tempPath: 'template',            // all template folder path
+        tempPath: 'template',            // The template folder path, relative to the configuration file
         list: [
             {
                 key: 'ftl',              // file key
-                path: 'view',
-                tempPath: ['index.ftl'], // relative to page.tempPath
-                name: ['index.ftl']      // generate file name
+                path: 'view',            // This file generates the path relative to the configuration file
+                tempPath: ['index.ftl'], //The file template path relative to the template folder path
+                name: ['index.ftl']      // For the name of the generated file, tempPath & name has multiple
+                                         // and the array location needs to correspond
+            },
+            {
+                key: 'mcss',
+                path: 'mcss',
+                tempPath: ['main.mcss'],
+                name: ['main.mcss']
             },
             {
                 key: 'js',
-                path: 'src/page',
+                path: 'javascript',
                 tempPath: ['entry.js'],
                 name: ['entry.js']
+            },
+            {
+                key: 'jsCom',
+                path: 'javascript',
+                path2: 'components',     // some file paths depend on newly created folder 'folder'
+                                         // and path2 is spliced in the back of 'folder'
+                tempPath: ['components/index.js', 'components/config.js', 'components/index.html'],
+                name: ['index.js', 'config.js', 'index.html']
             }
         ],
         // usually a level one menu has a mcss
