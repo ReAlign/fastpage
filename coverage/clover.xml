@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1507547459104" clover="3.2.0">
+  <project timestamp="1507547459104" name="All files">
+    <metrics statements="22" coveredstatements="14" conditionals="4" coveredconditionals="0" methods="7" coveredmethods="2" elements="33" coveredelements="16" complexity="0" loc="22" ncloc="22" packages="3" files="4" classes="4">
+      <package name="__test__.config.file.test">
+        <metrics statements="7" coveredstatements="7" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <file name="c.f.t.js" path="/Users/seewater/github_new/cs_fast_page/fastpage/__test__/config.file.test/c.f.t.js">
+          <metrics statements="7" coveredstatements="7" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+          <line num="1" count="1" type="stmt"/>
+          <line num="3" count="1" type="stmt"/>
+          <line num="4" count="3" type="stmt"/>
+          <line num="5" count="3" type="stmt"/>
+          <line num="7" count="2" type="stmt"/>
+          <line num="8" count="2" type="stmt"/>
+          <line num="10" count="1" type="stmt"/>
+        </file>
+      </package>
+      <package name="__test__.config.file.test.fixtures">
+        <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <file name="fastpage.config.1.js" path="/Users/seewater/github_new/cs_fast_page/fastpage/__test__/config.file.test/fixtures/fastpage.config.1.js">
+          <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+          <line num="1" count="1" type="stmt"/>
+        </file>
+        <file name="fastpage.config.js" path="/Users/seewater/github_new/cs_fast_page/fastpage/__test__/config.file.test/fixtures/fastpage.config.js">
+          <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+          <line num="1" count="1" type="stmt"/>
+          <line num="23" count="1" type="stmt"/>
+        </file>
+      </package>
+      <package name="lib.util">
+        <metrics statements="12" coveredstatements="4" conditionals="4" coveredconditionals="0" methods="6" coveredmethods="1"/>
+        <file name="log.js" path="/Users/seewater/github_new/cs_fast_page/fastpage/lib/util/log.js">
+          <metrics statements="12" coveredstatements="4" conditionals="4" coveredconditionals="0" methods="6" coveredmethods="1"/>
+          <line num="3" count="1" type="stmt"/>
+          <line num="5" count="1" type="stmt"/>
+          <line num="7" count="0" type="stmt"/>
+          <line num="10" count="2" type="stmt"/>
+          <line num="13" count="0" type="stmt"/>
+          <line num="16" count="0" type="stmt"/>
+          <line num="19" count="0" type="cond" truecount="0" falsecount="2"/>
+          <line num="20" count="0" type="cond" truecount="0" falsecount="2"/>
+          <line num="21" count="0" type="stmt"/>
+          <line num="23" count="0" type="stmt"/>
+          <line num="26" count="0" type="stmt"/>
+          <line num="30" count="1" type="stmt"/>
+        </file>
+      </package>
+    </metrics>
+  </project>
+</coverage>

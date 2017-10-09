@@ -9,7 +9,11 @@
   },
   "scripts": {
     "precommit": "lint-staged",
-    "test": "jest"
+    "test": "jest && codecov"
+  },
+  "jest": {
+    "coverageDirectory": "./coverage/",
+    "collectCoverage": true
   },
   "repository": {
     "type": "git",
