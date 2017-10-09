@@ -4,4 +4,10 @@ language: node_js
 node_js:
 - 8
 
-#test
+cache:
+  directories: node_modules
+
+script:
+  - npm run test:coverage
+  # 这里我没有全局安装 codecov，所以要通过 npm 来运行 codecov
+  - npm run codecov
