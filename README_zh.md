@@ -86,19 +86,32 @@ $ fp -r modal
 ```javascript
 var config = {
     page: {
-        tempPath: 'template',            // 模板文件夹路径
+        tempPath: 'template',            // 模板文件夹路径，相对于配置文件
         list: [
             {
                 key: 'ftl',              // 文件 key
-                path: 'view',
-                tempPath: ['index.ftl'], // 相对于模板文件夹的路径
-                name: ['index.ftl']      // 待生成文件的名字
+                path: 'view',            // 该文件生成路径，相对于配置文件
+                tempPath: ['index.ftl'], // 该文件模板路径，相对于模板文件夹的路径
+                name: ['index.ftl']      // 待生成文件的名字，tempPath & name 有多个的话，数组位置需对应
+            },
+            {
+                key: 'mcss',
+                path: 'mcss',
+                tempPath: ['main.mcss'],
+                name: ['main.mcss']
             },
             {
                 key: 'js',
-                path: 'src/page',
+                path: 'javascript',
                 tempPath: ['entry.js'],
                 name: ['entry.js']
+            },
+            {
+                key: 'jsCom',
+                path: 'javascript',
+                path2: 'components',     // 有些文件的路径是依赖新建的文件夹folder的，path2会拼接在folder后面
+                tempPath: ['components/index.js', 'components/config.js', 'components/index.html'],
+                name: ['index.js', 'config.js', 'index.html']
             }
         ],
         // 通常每个一级目录使用一个 mcss 样式文件
