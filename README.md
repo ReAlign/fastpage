@@ -4,6 +4,7 @@
 
 [![NPM travis][travis-image]][github-url]
 [![codebeat badge][codebeat-image]][codebeat-url]
+[![codecov][codecov-image]][codecov-url]
 [![NPM version][npm-image]][npm-url]
 [![node version][node-v-image]][github-url]
 [![download][downloads-image]][github-url]
@@ -14,10 +15,12 @@
 [github-url]: https://github.com/ReAlign/fastpage
 [npm-url]: https://www.npmjs.com/package/fastpage
 [codebeat-url]: https://codebeat.co/projects/github-com-realign-fastpage-master
+[codecov-url]: https://codecov.io/gh/ReAlign/fastpage
 
 [travis-image]: http://img.shields.io/travis/ReAlign/fastpage.svg
 
 [codebeat-image]: https://codebeat.co/badges/6cedbb50-1d93-4b4a-bfe6-ec316b873667
+[codecov-image]: https://codecov.io/gh/ReAlign/fastpage/branch/master/graph/badge.svg
 
 [npm-image]: https://img.shields.io/npm/v/fastpage.svg
 
