@@ -42,7 +42,7 @@
 <!-- [issues-image]: https://img.shields.io/github/issues/ReAlign/fastpage.svg
 [issues-url]: https://github.com/ReAlign/fastpage/issues -->
 
-## condition
+## Condition
 
 * node version：≥v7.6.0
 
