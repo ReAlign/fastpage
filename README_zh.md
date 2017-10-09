@@ -42,6 +42,10 @@
 <!-- [issues-image]: https://img.shields.io/github/issues/ReAlign/fastpage.svg
 [issues-url]: https://github.com/ReAlign/fastpage/issues -->
 
+## 要求
+
+* node version：≥v7.6.0
+
 ## 简介
 
 快速生成前端页面和相关文件的工具
@@ -50,10 +54,6 @@
 * [x] 支持多种页面（文件夹）类型，可配置
 * [x] 内置替换规则，可扩展
 * [ ] 其他（需求定制）
-
-## 要求
-
-* node version：≥v7.6.0
 
 ## 安装 & 运行
 

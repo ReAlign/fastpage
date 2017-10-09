@@ -42,6 +42,10 @@
 <!-- [issues-image]: https://img.shields.io/github/issues/ReAlign/fastpage.svg
 [issues-url]: https://github.com/ReAlign/fastpage/issues -->
 
+## condition
+
+* node version：≥v7.6.0
+
 ## Introduction
 
 A tool to quickly generate front-end pages and associated files
@@ -58,10 +62,6 @@ $ npm install fastpage -g
 ```
 
 At project root directory, and run:
-
-## condition
-
-* node version：≥v7.6.0
 
 #### init config file
 ```
