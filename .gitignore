@@ -1,6 +1,7 @@
 .idea/
 node_modules/
 dist/
+coverage/
 *.rar
 npm-debug.log
 webapp/src/mcss/
