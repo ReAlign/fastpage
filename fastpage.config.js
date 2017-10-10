@@ -1,6 +1,6 @@
 var config = {
     page: {
-        tempPath: '/webapp/s_tpl',
+        tempPath: 'webapp/s_tpl',
         list: [
             {
                 key: 'tpl',
@@ -38,7 +38,7 @@ var config = {
         ]
     },
     modal: {
-        tempPath: '/webapp/s_tpl/modal',
+        tempPath: 'webapp/s_tpl/modal',
         list: [
             {
                 key: 'jsCom',
