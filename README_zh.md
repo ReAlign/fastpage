@@ -154,6 +154,7 @@ module.exports = config;
 ```
 -v, --version,   输出版本
 -i, --init,      创建 fastpage.config.js 配置文件
+-c, --create     根据配置创建目录结构
 -r, --run,       创建页面文件夹及相关文件
 -h, --help,      帮助
 ```
