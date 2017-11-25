@@ -5,7 +5,7 @@
 let fs = require('fs');
 let path = require('path');
 let commander = require('commander');
-let log = require('./../lib/util/log');
+let log = require('n-s-logs');
 
 var fpConfig = {};
 

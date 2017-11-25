@@ -1,4 +1,4 @@
-let log = require('./../../lib/util/log');
+let log = require('n-s-logs');
 
 module.exports = function(configPath) {
     try {
