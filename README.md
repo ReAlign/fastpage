@@ -88,7 +88,7 @@ $ fp -r modal
 $ input new page name (index): a/entry
 ```
 * this place will be as follows:
-    * when path2 already exist, `a` will be spell into the path, but will not change file name, the name of configuration shall prevail（the follow-up to optimize）
+    * when path2 already exist, `path a` will be spell into the path, but will not change file name, the name of configuration shall prevail（the follow-up to optimize）
 
 ## Configuration
 
