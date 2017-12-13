@@ -86,11 +86,9 @@ $ fp -r modal
 
 ```javascript
 $ input new page name (index): a/entry
-
-// this place will be as follows:
-// when path2 already exist,
-// `a` will be spell into the path, but will not change file name, the name of configuration shall prevail（the follow-up to optimize）
 ```
+* this place will be as follows:
+    * when path2 already exist, `a` will be spell into the path, but will not change file name, the name of configuration shall prevail（the follow-up to optimize）
 
 ## Configuration
 
