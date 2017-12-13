@@ -82,6 +82,16 @@ $ fp
 $ fp -r modal
 ```
 
+#### need to pay attention to the input name
+
+```javascript
+$ input new page name (index): a/entry
+
+// this place will be as follows:
+// when path2 already exist,
+// `a` will be spell into the path, but will not change name, the name of configuration shall prevail
+```
+
 ## Configuration
 
 `fastpage.config.js` sample:
