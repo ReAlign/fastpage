@@ -1,6 +1,6 @@
 {
   "name": "fastpage",
-  "version": "1.3.3",
+  "version": "1.3.4",
   "description": "a tool to quickly generate front-end pages and associated files",
   "main": ".eslintrc.js",
   "bin": {
