@@ -82,6 +82,16 @@ $ fp
 $ fp -r modal
 ```
 
+#### 最后输入名称需要注意
+
+```javascript
+$ input new page name (index): a/entry
+
+// 这个地方会进行如下处理：
+// 有 path2 的时候，
+// a 会被拼进路径中，但是名称不会变，以配置中的名称为准
+```
+
 ## 配置
 
 `fastpage.config.js` 示例:
