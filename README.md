@@ -54,6 +54,7 @@
 A tool to quickly generate front-end pages and associated files
 
 * [x] a lot of repetitive work is done when creating a new page
+* [ ] according to the configuration generated folder structure
 * [x] support multiple page (folder) types, configurable
 * [x] built-in replacement rules, can be extended
 * [ ] other (requirements customization)
