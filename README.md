@@ -165,7 +165,7 @@ module.exports = config;
 ```
 -v, --version,   print version
 -i, --init,      create fastpage.config.js
--c, --create     create the structure as configured
+-c, --create,    create the structure as configured
 -r, --run,       create page folder and associated files
 -h, --help,      print help
 ```
