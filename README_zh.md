@@ -167,5 +167,3 @@ module.exports = config;
 -r, --run,       创建页面文件夹及相关文件
 -h, --help,      帮助
 ```
-
-

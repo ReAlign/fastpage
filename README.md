@@ -169,5 +169,3 @@ module.exports = config;
 -r, --run,       create page folder and associated files
 -h, --help,      print help
 ```
-
-
