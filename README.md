@@ -14,23 +14,23 @@
 
 [github-url]: https://github.com/ReAlign/fastpage
 [npm-url]: https://www.npmjs.com/package/fastpage
-[codebeat-url]: https://codebeat.co/projects/github-com-realign-fastpage-master?style=for-the-badge
+[codebeat-url]: https://codebeat.co/projects/github-com-realign-fastpage-master
 [codecov-url]: https://codecov.io/gh/ReAlign/fastpage
 
-[travis-image]: http://img.shields.io/travis/ReAlign/fastpage.svg?style=for-the-badge
+[travis-image]: http://img.shields.io/travis/ReAlign/fastpage.svg
 
 [codebeat-image]: https://codebeat.co/badges/6cedbb50-1d93-4b4a-bfe6-ec316b873667
-[codecov-image]: https://img.shields.io/codecov/c/ReAlign/codecov/fastpage.svg?style=for-the-badge
+[codecov-image]: https://codecov.io/gh/ReAlign/fastpage/branch/master/graph/badge.svg
 
-[npm-image]: https://img.shields.io/npm/v/fastpage.svg?style=for-the-badge
+[npm-image]: https://img.shields.io/npm/v/fastpage.svg
 
-[node-v-image]: https://img.shields.io/badge/node-%E2%89%A5v7.6.0-brightgreen.svg?style=for-the-badge
+[node-v-image]: https://img.shields.io/badge/node-%E2%89%A5v7.6.0-brightgreen.svg
 
-[downloads-image]: https://img.shields.io/npm/dt/fastpage.svg?style=for-the-badge
+[downloads-image]: https://img.shields.io/npm/dt/fastpage.svg
 
-[licence-image]: https://img.shields.io/npm/l/fastpage.svg?style=for-the-badge
+[licence-image]: https://img.shields.io/npm/l/fastpage.svg
 
-[nodei-image]: https://nodei.co/npm/fastpage.png?downloads=true&downloadRank=true&stars=true&style=for-the-badge
+[nodei-image]: https://nodei.co/npm/fastpage.png?downloads=true&downloadRank=true&stars=true
 
 <!-- [![NPM stars][stars-image]][stars-url]
 [![NPM forks][forks-image]][forks-url]
