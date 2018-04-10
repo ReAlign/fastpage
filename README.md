@@ -14,8 +14,8 @@
 
 [github-url]: https://github.com/ReAlign/fastpage
 [npm-url]: https://www.npmjs.com/package/fastpage
-[codebeat-url]: https://codebeat.co/projects/github-com-realign-fastpage-master
-[codecov-url]: https://codecov.io/gh/ReAlign/fastpage
+[codebeat-url]: https://codebeat.co/projects/github-com-realign-fastpage-master?style=for-the-badge
+[codecov-url]: https://codecov.io/gh/ReAlign/fastpage?style=for-the-badge
 
 [travis-image]: http://img.shields.io/travis/ReAlign/fastpage.svg?style=for-the-badge
 
