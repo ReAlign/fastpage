@@ -15,12 +15,12 @@
 [github-url]: https://github.com/ReAlign/fastpage
 [npm-url]: https://www.npmjs.com/package/fastpage
 [codebeat-url]: https://codebeat.co/projects/github-com-realign-fastpage-master?style=for-the-badge
-[codecov-url]: https://codecov.io/gh/ReAlign/fastpage?style=for-the-badge
+[codecov-url]: https://codecov.io/gh/ReAlign/fastpage
 
 [travis-image]: http://img.shields.io/travis/ReAlign/fastpage.svg?style=for-the-badge
 
 [codebeat-image]: https://codebeat.co/badges/6cedbb50-1d93-4b4a-bfe6-ec316b873667
-[codecov-image]: https://codecov.io/gh/ReAlign/fastpage/branch/master/graph/badge.svg?style=for-the-badge
+[codecov-image]: https://img.shields.io/codecov/c/ReAlign/codecov/fastpage.svg?style=for-the-badge
 
 [npm-image]: https://img.shields.io/npm/v/fastpage.svg?style=for-the-badge
 
