@@ -4,8 +4,9 @@ dist/
 coverage/
 *.rar
 npm-debug.log
-webapp/src/mcss/
-webapp/src/page/
-webapp/WEB-INF/view/
+
+sample/webapp/src/mcss/
+sample/webapp/src/page/
+sample/webapp/WEB-INF/view/
 
 package-lock.json
