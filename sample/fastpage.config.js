@@ -31,9 +31,15 @@ var config = {
         mcssTopLevel: true,
         replaceList: [
             {
+                dynamic: true,
                 rex: '~value~',
                 global: true,
                 str: 'replace value'
+            },
+            {
+                rex: '~aaaaa~',
+                global: true,
+                str: 'replace aaaaa'
             }
         ]
     },
