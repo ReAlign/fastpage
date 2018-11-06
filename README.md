@@ -16,20 +16,13 @@
 [npm-url]: https://www.npmjs.com/package/fastpage
 [codebeat-url]: https://codebeat.co/projects/github-com-realign-fastpage-master
 [codecov-url]: https://codecov.io/gh/ReAlign/fastpage
-
 [travis-image]: http://img.shields.io/travis/ReAlign/fastpage.svg
-
 [codebeat-image]: https://codebeat.co/badges/6cedbb50-1d93-4b4a-bfe6-ec316b873667
 [codecov-image]: https://codecov.io/gh/ReAlign/fastpage/branch/master/graph/badge.svg
-
 [npm-image]: https://img.shields.io/npm/v/fastpage.svg
-
 [node-v-image]: https://img.shields.io/badge/node-%E2%89%A5v7.6.0-brightgreen.svg
-
 [downloads-image]: https://img.shields.io/npm/dt/fastpage.svg
-
 [licence-image]: https://img.shields.io/npm/l/fastpage.svg
-
 [nodei-image]: https://nodei.co/npm/fastpage.png?downloads=true&downloadRank=true&stars=true
 
 <!-- [![NPM stars][stars-image]][stars-url]
@@ -62,42 +55,50 @@
 
 ## 安装 & 运行
 
-```
+```bash
+// global install
 $ npm install fastpage -g
 ```
 
 在项目根目录, 执行:
 
-#### 初始化配置文件
-```
+### 初始化配置文件
+
+```bash
+// init
 $ fp -i
 ```
-#### 创建主文件夹及相关文件
-```
+
+### 创建主文件夹及相关文件
+
+```bash
 // 你可以直接执行 fp , 当然你也可以执行全命令: fp -r page(page 这个配置必须存在)
 $ fp
 ```
 
-#### 根据配置列表生成文件夹及相关文件
-```
+### 根据配置列表生成文件夹及相关文件
+
+```bash
 // modal 是配置列表中存在的配置
 $ fp -r modal
 ```
 
-#### 最后输入名称需要注意
+### 最后输入名称需要注意
 
-```javascript
+```bash
+// index
 $ input new page name (index): a/entry
 ```
+
 * 这个地方会进行如下处理：
-    * 有 path2 的时候， `路径a` 会被拼进路径中，但是文件名称不会变，以配置中的名称为准（后续会优化）
+  * 有 path2 的时候， `路径a` 会被拼进路径中，但是文件名称不会变，以配置中的名称为准（后续会优化）
 
 ## 配置
 
 `fastpage.config.js` 示例:
 
 ```javascript
-var config = {
+const config = {
     page: {
         tempPath: 'template',            // 模板文件夹路径，相对于配置文件
         list: [
@@ -160,9 +161,9 @@ var config = {
 module.exports = config;
 ```
 
-# 命令
+## 命令
 
-```
+```javascript
 -v, --version,   输出版本
 -i, --init,      创建 fastpage.config.js 配置文件
 -c, --create,    根据配置创建目录结构

@@ -2,18 +2,20 @@
 
 'use strict';
 
-let fs = require('fs');
-let path = require('path');
-let commander = require('commander');
-let log = require('n-s-logs');
+const fs = require('fs');
+const path = require('path');
+const commander = require('commander');
+const log = require('n-s-logs');
 
-var fpConfig = {};
+let fpConfig = {};
 
 global.fp = {
     root: path.join(process.cwd())
 };
 
-let isFileExist = (path) => {
+const u = {};
+
+u.isFileExist = (path) => {
     try {
         return fs.existsSync(path);
     } catch (e) {
@@ -21,19 +23,19 @@ let isFileExist = (path) => {
     }
 };
 
-let combineFpConfPath = () => {
+u.combineFpConfPath = () => {
     let fpConfigPath = path.join(global.fp.root, 'fastpage.config.js');
 
-    if(isFileExist(fpConfigPath)) {
-        return fpConfigPath;
-    } else {
+    if(!u.isFileExist(fpConfigPath)) {
         log.error('Can\'t find fastpage.config.js, please make sure the file exists.');
         return null;
     }
+
+    return fpConfigPath;
 };
 
-let tryRequireConfList = (str, reqStr) => {
-    let fpConfigPath = combineFpConfPath();
+u.tryRequireConfList = (str, reqStr) => {
+    let fpConfigPath = u.combineFpConfPath();
 
     if (!fpConfigPath) {
         return false;
@@ -42,13 +44,13 @@ let tryRequireConfList = (str, reqStr) => {
     try {
         fpConfig = require(fpConfigPath);
         if(!fpConfig[str]) {
-            log.error('Can\'t find ' + str + ' list config, please make sure the config exists.');
+            log.error(`Can't find ${str} list config, please make sure the config exists.'`);
             return false;
         }
 
-        let reqByReqStr = (reqStr, obj) => {
+        const reqByReqStr = (reqStr, obj) => {
             require(reqStr).init(obj);
-        }
+        };
 
         reqByReqStr(reqStr, fpConfig[str]);
     } catch (e) {
@@ -58,25 +60,25 @@ let tryRequireConfList = (str, reqStr) => {
     return true;
 };
 
-let readyConfig = (str) => {
-    tryRequireConfList(str, './../lib/inquirer.entry');
+u.readyConfig = (str) => {
+    u.tryRequireConfList(str, './../lib/inquirer.entry');
 };
 
-let getVersion = () => {
+u.getVersion = () => {
     let pack = require('../package.json');
     return `${pack.version}`;
 };
 
-let initFpConfigFile = () => {
+u.initFpConfigFile = () => {
     require('./../lib/init').run();
 };
 
-let createStructureAsConfig = (str) => {
-    tryRequireConfList(str, './../lib/create.structure');
+u.createStructureAsConfig = (str) => {
+    u.tryRequireConfList(str, './../lib/create.structure');
 };
 
 commander
-    .version(getVersion())
+    .version(u.getVersion())
     .option('-v, --versions', 'output the version number')
     .option('-i, --init', 'init fastpage.config.js configuration files')
     .option('-c, --create <lang>', 'create the structure as configured')
@@ -84,21 +86,21 @@ commander
     .parse(process.argv);
 
 if(commander.versions) {
-    log.show(getVersion());
+    log.show(u.getVersion());
     process.exit(1);
 }
 
 if(commander.init) {
-    initFpConfigFile();
+    u.initFpConfigFile();
     return false;
 }
 
 if(commander.create) {
-    createStructureAsConfig(commander.create);
+    u.createStructureAsConfig(commander.create);
     return false;
 }
 
 if (commander.run) {
-    var strR = typeof commander.run === 'boolean' ? 'page' : commander.run;
-    readyConfig(strR);
+    const strR = typeof commander.run === 'boolean' ? 'page' : commander.run;
+    u.readyConfig(strR);
 }
